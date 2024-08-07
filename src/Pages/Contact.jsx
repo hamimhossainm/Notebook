@@ -14,7 +14,7 @@ const Contact = () => {
           <h2 className='text-xl'>Name: <span className='absolute left-[300px]'>Hamim Hossain</span></h2>
           <p className='text-xl'>Email: <span className='absolute left-[300px]'>hamim.dashboard@gmail.com</span></p>
           <p className='text-xl'>Phone: <span className='absolute left-[300px]'>01904486467</span></p>
-          <p className='text-xl'>Phone: <span className='absolute left-[300px]'>01333700658</span></p>
+          <p className='text-xl'>WhatsApp: <span className='absolute left-[300px]'>01333700658</span></p>
         </div>
       </div>
     </>

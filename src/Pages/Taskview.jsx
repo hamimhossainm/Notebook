@@ -23,7 +23,6 @@ const Taskview = () => {
 
   const handleLoadMore = () => {
     setnext((next)=>next+2);
-    console.log(next);
   }
 
   const handleUpdate = (note) => {
@@ -43,7 +42,6 @@ const Taskview = () => {
     seteditename={seteditename}
     setedittitle={setedittitle}
     seteditdescription={seteditdescription}
-    
     />
   }
 
@@ -74,7 +72,7 @@ const Taskview = () => {
                 <p>{note.name}</p>
                 <p>{note.title}</p>
                 <p>{note.description}</p>
-              <div>
+                <div>
                   <button onClick={()=>handleRemove(note.id)} className='bg-red-700 text-white rounded text-sm px-2 mr-2'>Remove</button>
                   <button onClick={()=>handleUpdate(note)} className='bg-gray-700 text-white rounded text-sm px-2'>Update</button>
                 </div>
@@ -85,7 +83,7 @@ const Taskview = () => {
 
           {
             next < notes.length && (
-              <button onClick={handleLoadMore} className='block mx-auto rounded bg-cyan-700 text-white px-2 mt-2'>Load More</button>
+              <button onClick={handleLoadMore} className='block mx-auto rounded bg-cyan-700 text-white px-2 mt-2 sm:text-[12px] '>Load More</button>
             )
           }
 

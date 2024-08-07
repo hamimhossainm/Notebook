@@ -25,41 +25,39 @@ const Update = ({setvisible,editename,edittitle,editdescription,editId,setediten
         setdescriptionlen((descriptionlen)=> 100 - textareaLen);
         seteditdescription((editdescription)=>e.target.value)
       }
+
+
   return (
     <>
-      <div className='bg-gray-100 w-2/4 mx-auto py-10 font-tre mt-10 shadow-lg relative'>
-        <div className='container bg-gray-100 w-2/4'>
-            <div>
-                <h1 className='text-3xl font-bold absolute left-[165px] bottom-[390px] text-orange-700'>NoteBook Update Section</h1>
-                <div className='absolute left-[650px] bottom-[430px]'>
-                    <button onClick={()=>setvisible(false)} className='rounded bg-red-800 text-white px-2'>Close</button>
-                </div>
-                
-                <form className='mx-auto block'>
-                    <div className='mt-3'>
-                        <input onChange={(e)=>seteditename((editename)=>e.target.value)} value={editename} placeholder='Name' type="text" name='name' className='rounded border-2 shadow-md outline-none px-2 py-1 w-80' />
-                    </div>
+      <div className='container relative font-tre bg-gray-100 shadow-lg w-2/4 h-[550px] px-3 py-3 mt-10'>
+        <h1 className='text-center text-4xl font-bold text-orange-600'>NoteBook Update Section</h1>
+        <button onClick={()=>setvisible(false)} className='absolute left-[750px] bottom-[520px] rounded text-white bg-red-700 px-2'>Close</button>
+        <form className='text-center mt-5'>
+          <div className='mt-3'>
+            <input onChange={(e)=>seteditename((editename)=>e.target.value)} value={editename} name='name' placeholder='Name' type="text"
+            className='w-96 h-10 rounded-md px-2 text-[20px] shadow-md outline-orange-500'/>
+          </div>
 
-                    <div className='mt-3'>
-                        <input onChange={(e)=>setedittitle((edittitle)=>e.target.value)} value={edittitle}  placeholder='Project Title' type="text" className='rounded border-2 shadow-md outline-none px-2 py-1 w-80' />
-                    </div>
+          <div className='mt-3'>
+            <input onChange={(e)=>setedittitle((edittitle)=>e.target.value)} value={edittitle} placeholder='Project Title' type="text"
+            className='w-96 h-10 rounded-md px-2 text-[20px] shadow-md outline-orange-500'/>
+          </div>
 
-                    <div className='mt-3'>
-                        <textarea onChange={handleTextarea} value={editdescription} placeholder='Description' rows={6} type="text" className='resize-none rounded border-2 shadow-md outline-none px-2 py-1 w-80' />
-                        <p className='absolute bottom-[120px] left-[320px] text-sm text-gray-300'>Remaining Characters {descriptionlen}</p>
-                    </div>
+          <div className='mt-3 relative'>
+            <textarea onChange={handleTextarea} value={editdescription} rows={7} placeholder='Description' type="text"
+            className='w-96 rounded-md px-2 text-[20px] shadow-md resize-none outline-orange-500'/>
+            <p className='absolute bottom-3 left-96 text-gray-300'>Remaining Characters {descriptionlen}</p>
+          </div>
 
-                    <div className='mt-3'>
-                        <label className='ml-[46px] mr-2' htmlFor="check">I want to Update this Task</label>
-                        <input className='' type="checkbox" name="check" id="check" />
-                    </div>
+          <div className='mt-3'>
+            <label htmlFor="check" className='text-xl mr-2'>I want to update this Task</label>
+            <input type="checkbox" name="check" id="check" />
+          </div>
 
-                    <div className='mt-3 text-center'>
-                        <button onClick={handleUpdateButton} id='updateButton'  className='rounded px-2 bg-gray-600 text-white'>Update</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+          <div className='mt-3'>
+            <button onClick={handleUpdateButton} id='updateButton'  className='rounded px-2 bg-gray-600 text-white'>Update</button>
+          </div>
+        </form>
       </div>
     </>
   )
