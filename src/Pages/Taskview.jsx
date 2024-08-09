@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteNotes } from '../Features/NoteSlice';
 import Update from '../Componenets/Update';
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
 
 
 const Taskview = () => { 
@@ -54,7 +56,7 @@ const Taskview = () => {
 
       <div className='container font-tre'>
         <div className='bg-gray-100 mt-10 w-3/4 mx-auto shadow-md'>
-          <div className='grid grid-cols-5 gap-x-20 px-4 py-3 font-bold text-2xl shadow-lg text-orange-600'>
+          <div className='text-center grid grid-cols-5 gap-x-20 px-4 py-3 font-bold text-2xl shadow-lg text-orange-600 esm:text-[8px] esm:gap-x-1 esm:px-0 esm:py-1 sm:text-[10px] md:text-[12px] lg:text-[15px]'>
             <p>Id</p>
             <p>Name</p>
             <p>Project Title</p>
@@ -67,15 +69,17 @@ const Taskview = () => {
           <div>
           {
             notes ?.slice(0,next) .map((note)=>(
-              <div key={note.id} className='grid grid-cols-5 gap-x-20 px-4 py-3 text-gray-500 h-20'>
+              <div key={note.id} className='text-center grid grid-cols-5 gap-x-20 px-2 py-3 text-gray-500 max-h-20 text-wrap esm:text-[6px] esm:gap-x-1 esm:px-0 esm:py-1 sm:text-[8px] md:text-[10px] lg:text-[13px]'>
                 <p>{note.id}</p>
                 <p>{note.name}</p>
                 <p>{note.title}</p>
                 <p>{note.description}</p>
+
                 <div>
-                  <button onClick={()=>handleRemove(note.id)} className='bg-red-700 text-white rounded text-sm px-2 mr-2'>Remove</button>
-                  <button onClick={()=>handleUpdate(note)} className='bg-gray-700 text-white rounded text-sm px-2'>Update</button>
+                  <button onClick={()=>handleRemove(note.id)} className='bg-red-800 text-white rounded-full p-[2px] mr-1'><MdDelete /></button>
+                  <button onClick={()=>handleUpdate(note)} className='bg-black text-white p-[2px]'><FaEdit /></button>
                 </div>
+                
               </div>
             ))
           }
